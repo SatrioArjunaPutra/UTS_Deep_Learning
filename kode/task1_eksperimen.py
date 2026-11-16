@@ -136,8 +136,11 @@ def tabel(runs_per_grup):
                 mk = lini_all[vi] == l
                 rows.append({"run": n, "lini": l, **dict(zip(KELAS, f1_per_kelas(y_all[vi][mk], pv[mk])))})
     if rows:
-        pd.DataFrame(rows).drop_duplicates(["run", "lini"]).round(4).to_csv(
-            os.path.join(out, "f1_per_kelas_per_lini.csv"), index=False)
+        # gabung dengan baris lama (pemanggilan dengan --extra hanya melihat sebagian run), baris baru menang
+        p_csv = os.path.join(out, "f1_per_kelas_per_lini.csv")
+        lama = pd.read_csv(p_csv) if os.path.exists(p_csv) else pd.DataFrame()
+        pd.concat([lama, pd.DataFrame(rows)]).drop_duplicates(["run", "lini"], keep="last").round(4).to_csv(
+            p_csv, index=False)
 
     if "modality" in semua:  # heatmap F1 per kelas per modality
         df = semua["modality"].set_index("run")

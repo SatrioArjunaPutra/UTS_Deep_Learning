@@ -115,7 +115,7 @@ dengan arah acak per gambar** — pola yang mirip goresan dan retakan tipis, seh
 | augmentasi fotometrik + offset suhu | 0,8462 | 0,8798 | 0,7439 | 0,7988 |
 | bobot ulang lini (p_test/p_train) | 0,8380 | 0,8674 | 0,7490 | 0,7967 |
 | per lini + augmentasi | 0,8371 | 0,8717 | 0,7329 | 0,7886 |
-| augmentasi garis halus lini B (p = 0,5) | _menunggu_ | | | |
+| augmentasi garis halus lini B (p = 0,5) | 0,8379 | 0,8677 | 0,7469 | 0,7958 |
 
 Empat teknik pertama hanya menyamakan kecerahan, kontras, suhu, atau bobot, sehingga tidak menyentuh
 penyebab utama (garis halus); tidak satu pun menaikkan lini B. Teknik terakhir dirancang dari analisis
@@ -125,13 +125,36 @@ energi cincin lini B − A di data latih (tambahan std ±4,8 piksel). Garis tiru
 ketiga ukuran (`runs/t1_tekstur`, kolom "lini A + garis tiruan"; contoh visual di `domain_fourier.png`).
 Tujuannya agar model belajar mengenali goresan/retakan meskipun tertimpa garis halus lini B.
 
+**Hasil jujur: tidak ada teknik domain yang menaikkan lini B.** Augmentasi garis halus pun menurunkan lini B
+(0,7469 vs 0,7539). Dugaan kami: menambah garis tiruan membuat gambar lini A ikut lebih sulit tanpa mengajari
+model cara membedakan garis lini B dari goresan asli, karena keduanya memang mirip di skala 64×64. Karena itu
+tidak ada teknik domain yang dipakai di model final. Yang ternyata menaikkan lini B adalah modality dropout
+(1f: lini B 0,7539 → 0,7824), yang memaksa cabang gambar belajar lebih kuat. Sisa celah lini A–B tetap
+menjadi keterbatasan utama model untuk data uji (60% lini B).
+
 ## 1f. Modalitas hilang
 
 Pada model fusi yang dilatih tanpa modality dropout, menghapus semua sensor di validasi menurunkan
 macro-F1 xattn dari 0,844 ke 0,616 — **lebih rendah daripada model gambar saja (0,687)**, padahal
 batas atas tanpa sensor kira-kira setara model gambar saja (`las_dingin` mustahil dikenali). Jadi model
-fusi biasa belum "masuk akal" saat sensor tidak terekam. _Menunggu run `t1_miss_drop25_xattn`
-(sensor dihapus acak 25% saat training)._
+fusi biasa belum "masuk akal" saat sensor tidak terekam: ia terlalu bergantung pada sensor.
+
+**Modality dropout** (`--mod_drop 0.25`): saat training, seluruh sensor sebuah unit dihapus (mask = 0) dengan
+peluang 25%, dan satu kanal dihapus dengan peluang 5%. Sensor yang dihapus benar-benar tidak terlihat
+model: di encoder sinyal nilai dikalikan mask, dan cabang sensor tiap fusi dimatikan bila tidak ada kanal.
+
+| Run (xattn, validasi) | Macro-F1 | Lini A | Lini B | Tertimbang test | Tanpa sensor (semua dihapus) | Sensor hilang asli (476 unit) |
+|---|---|---|---|---|---|---|
+| baseline | 0,8440 | 0,8731 | 0,7539 | 0,8025 | 0,6164 | 0,6217 |
+| modality dropout 25% | **0,8692** | **0,8969** | **0,7824** | **0,8295** | **0,6705** | **0,6841** |
+| (acuan) model gambar saja | 0,6872 | 0,7210 | 0,5835 | 0,6394 | 0,6872 | 0,6881 |
+
+Tanpa sensor, model dengan modality dropout mendekati model khusus gambar (0,671 vs 0,687) — batas atas
+yang wajar karena `las_dingin` hanya terlihat di sensor — jadi prediksinya kini masuk akal saat sensor hilang.
+Yang tidak diduga: dengan sensor lengkap pun macro-F1 naik 0,025 dan lini B naik 0,029. Karena sensor sering
+"dimatikan", cabang gambar dipaksa belajar sendiri, sehingga cacat visual ikut membaik (lini B: gores
+0,588 → 0,614, retak 0,492 → 0,578; `runs/t1_tabel/f1_per_kelas_per_lini.csv`). Modality dropout 25% dipakai
+di model final.
 
 ## 1g. Training dan model final
 
@@ -140,5 +163,33 @@ fusi biasa belum "masuk akal" saat sensor tidak terekam. _Menunggu run `t1_miss_
   kurva `kurva_overfit.png`), menandakan pipeline data–model–loss benar dan model cukup kapasitasnya.
 - Model yang dievaluasi selalu model **epoch terakhir** (jadwal OneCycle), bukan epoch terbaik di validasi,
   agar skor validasi tidak bias oleh pemilihan epoch.
-- _Menunggu run final 3 seed: kurva pembelajaran (`final_kurva.png`), confusion matrix
-  (`final_confusion.png`), mean ± std macro-F1._
+- **Konfigurasi final** (dipilih di validasi dengan aturan yang ditetapkan sebelum melihat hasil: macro-F1
+  tertimbang komposisi test): fusi xattn + buang 1.241 kandidat salah label (1d) + modality dropout 25% (1f);
+  tidak ada teknik domain (1e) karena tidak satu pun menaikkan skor tertimbang. 25 epoch, AdamW (lr 2·10⁻³,
+  wd 5·10⁻⁴), OneCycle, batch 256; dilatih dengan **3 seed (0, 1, 2)** pada split validasi yang sama.
+
+| Model final, validasi (`runs/t1_tabel/final_mean_std.csv`) | mean ± std (3 seed) |
+|---|---|
+| macro-F1 | **0,8700 ± 0,0012** |
+| macro-F1 lini A / lini B | 0,8992 ± 0,0022 / 0,7798 ± 0,0031 |
+| macro-F1 tertimbang komposisi test (60% lini B) | 0,8286 ± 0,0015 |
+| macro-F1 tanpa sensor (semua sensor dihapus) | 0,6704 ± 0,0023 |
+| F1 normal / gores / noda / retak | 0,922 / 0,811 / 0,886 / 0,749 |
+| F1 gelembung / las_dingin / kontaminasi | 0,837 / 0,941 / 0,944 |
+
+- **Variasi antar seed kecil** (std macro-F1 0,0012), jadi selisih antar eksperimen satu-seed di 1b–1f yang
+  lebih kecil dari ±0,003 sebaiknya dibaca sebagai setara. Contohnya, menambah "buang kandidat salah label" di
+  atas modality dropout tidak menambah skor (seed 0: 0,8687 vs modality dropout saja 0,8692).
+- **Kurva pembelajaran** (`laporan_figs/task1/final_kurva.png`): loss validasi bergejolak di 5 epoch awal
+  (fase learning rate tinggi OneCycle), lalu stabil di ±0,5 sementara loss latih terus turun ke ±0,26; macro-F1
+  validasi naik stabil dan mendatar di ±0,87 sejak epoch ±18, tanpa tanda overfitting yang menurunkan skor.
+- **Confusion matrix** (`final_confusion.png`, dijumlah atas 3 seed): kesalahan terbesar adalah cacat yang
+  diprediksi `normal` (terutama retak dan gores) dan retak ↔ gores — kelas yang sama dengan pasangan kandidat
+  salah label di 1d dan kelas yang paling terdampak lini B di 1e.
+- **Prediksi data uji**: rata-rata probabilitas 3 seed (ensemble) → `prediksi_klasifikasi.csv`
+  (16.000 baris; lolos `kode/cek_submission.py --data data_uts_dl`: kolom, nama kelas, dan himpunan ID persis).
+
+**Ringkasan Task 1.** Fusi cross-attention + modality dropout memberi macro-F1 validasi 0,870 ± 0,001. Kelemahan
+utama ada di lini B (0,780), yang mendominasi data uji; garis halus lini B mirip goresan/retakan dan belum
+teratasi oleh teknik domain yang kami uji, sehingga skor uji kemungkinan lebih dekat ke estimasi tertimbang
+(±0,83) daripada skor validasi biasa.
