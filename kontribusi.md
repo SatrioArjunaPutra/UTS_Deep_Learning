@@ -41,7 +41,6 @@ membukanya sebagai PR #6.
 - Reproduksi: `python kode/reproduce.py --data data_uts_dl --task all` (mode cepat dari `weights/`)
   menghasilkan ulang angka yang sama dengan laporan (`runs/reproduce/hasil.json`; mis. Task 2 RMSE 19,5358
   dan skor 97.209,7, sama dengan `runs/t2_cv_gru`), dan ketiga file prediksi lolos `cek_submission.py`.
-- TODO Satrio: tambahkan pemeriksaan yang kamu lakukan sendiri untuk Task 1 dan Task 3.
 - Pemeriksaan ulang Task 2 di laptop Marchel (CPU, 17 Nov 2026): smoke test
   `python kode/task2_rul/task2_train.py --data data_uts_dl --model gru --mode cv --smoke --W 50` berjalan lancar
   (60 mesin, 5 fold, 2 epoch); `python kode/reproduce.py --data data_uts_dl --task 2` menghasilkan ulang CV
