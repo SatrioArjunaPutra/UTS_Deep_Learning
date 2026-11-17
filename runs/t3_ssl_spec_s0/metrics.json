@@ -1,0 +1,9 @@
+{
+  "epochs": 100,
+  "loss_akhir": {
+    "epoch": 100,
+    "loss_s": 2.626144582884652
+  },
+  "waktu_detik": 1050.8,
+  "dim_spec": 256
+}

@@ -1,0 +1,9 @@
+{
+  "epochs": 100,
+  "loss_akhir": {
+    "epoch": 100,
+    "loss_g": 3.0229521785463604
+  },
+  "waktu_detik": 33507.9,
+  "dim_img": 256
+}

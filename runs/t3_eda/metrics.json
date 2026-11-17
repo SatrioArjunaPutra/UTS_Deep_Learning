@@ -1,0 +1,64 @@
+{
+  "n": 36000,
+  "mikroskop": {
+    "M1": 21636,
+    "M2": 14364
+  },
+  "kecerahan_per_mikroskop": {
+    "M1": 127.8,
+    "M2": 146.07
+  },
+  "kontras_per_mikroskop": {
+    "M1": 19.7,
+    "M2": 19.9
+  },
+  "frek_dominan_per_mikroskop": {
+    "M1": 5.99,
+    "M2": 5.97
+  },
+  "orientasi_hist_10bin": [
+    2455,
+    2093,
+    1996,
+    2164,
+    1321,
+    2486,
+    2098,
+    2011,
+    2202,
+    1279
+  ],
+  "frac_tekstur_berarah_kuat": 0.5584722222222223,
+  "ketajaman_laplacian_per_mikroskop": {
+    "M1": 14.72,
+    "M2": 20.74
+  },
+  "spike_per_spektrum_rata2": 0.2564444444444444,
+  "frac_spektrum_dengan_spike": 0.2247222222222222,
+  "kemiringan_baseline_persentil": [
+    -0.924,
+    -0.315,
+    -0.002,
+    0.173,
+    0.504
+  ],
+  "posisi_puncak_tertinggi_persentil": [
+    17.0,
+    22.0,
+    48.0,
+    63.0,
+    80.0
+  ],
+  "spektrum_min_max": [
+    -1.6630859375,
+    6.15234375
+  ],
+  "spike_per_mikroskop": {
+    "M1": 0.259,
+    "M2": 0.253
+  },
+  "baseline_per_mikroskop": {
+    "M1": -0.088,
+    "M2": -0.092
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "pilihan_k": {
+    "k_silhouette": 5,
+    "k_davies_bouldin": 5,
+    "k_bic": 20,
+    "k_bic_siku": 7,
+    "k_silhouette_umap": 7,
+    "n_komponen_knn_umap": {
+      "10": 7,
+      "30": 7
+    },
+    "k_bertingkat": 8,
+    "uji_belah": [
+      {
+        "cluster_kasar": 0,
+        "n": 10043,
+        "lembah_citra": 1.0,
+        "lembah_spektrum": 0.0039,
+        "lembah_fusion": 0.0034,
+        "terbelah": true
+      },
+      {
+        "cluster_kasar": 1,
+        "n": 8685,
+        "lembah_citra": 1.0,
+        "lembah_spektrum": 0.2019,
+        "lembah_fusion": 0.1994,
+        "terbelah": true
+      },
+      {
+        "cluster_kasar": 2,
+        "n": 3656,
+        "lembah_citra": 0.9723,
+        "lembah_spektrum": 0.4404,
+        "lembah_fusion": 0.4553,
+        "terbelah": false
+      },
+      {
+        "cluster_kasar": 3,
+        "n": 4979,
+        "lembah_citra": 1.0,
+        "lembah_spektrum": 0.416,
+        "lembah_fusion": 0.4145,
+        "terbelah": false
+      },
+      {
+        "cluster_kasar": 4,
+        "n": 8637,
+        "lembah_citra": 0.0033,
+        "lembah_spektrum": 0.5019,
+        "lembah_fusion": 0.0033,
+        "terbelah": true
+      }
+    ]
+  },
+  "tabel": [
+    {
+      "k": 2,
+      "silhouette": 0.1947,
+      "davies_bouldin": 2.0431,
+      "bic_gmm": -713919.6778,
+      "stabilitas_ari": 1.0,
+      "inersia": 28963.9485,
+      "silhouette_umap": 0.4144,
+      "ARI_citra_vs_spektrum": 0.5165
+    },
+    {
+      "k": 3,
+      "silhouette": 0.2399,
+      "davies_bouldin": 1.7036,
+      "bic_gmm": -894649.0498,
+      "stabilitas_ari": 0.8011,
+      "inersia": 24116.8879,
+      "silhouette_umap": 0.5338,
+      "ARI_citra_vs_spektrum": 0.4123
+    },
+    {
+      "k": 4,
+      "silhouette": 0.2995,
+      "davies_bouldin": 1.4606,
+      "bic_gmm": -1061177.4162,
+      "stabilitas_ari": 1.0,
+      "inersia": 19488.8665,
+      "silhouette_umap": 0.611,
+      "ARI_citra_vs_spektrum": 0.8007
+    },
+    {
+      "k": 5,
+      "silhouette": 0.3155,
+      "davies_bouldin": 1.3319,
+      "bic_gmm": -1104471.2649,
+      "stabilitas_ari": 0.9343,
+      "inersia": 17487.4858,
+      "silhouette_umap": 0.6544,
+      "ARI_citra_vs_spektrum": 0.8344
+    },
+    {
+      "k": 6,
+      "silhouette": 0.3076,
+      "davies_bouldin": 1.3767,
+      "bic_gmm": -1135631.1521,
+      "stabilitas_ari": 0.8395,
+      "inersia": 16103.7218,
+      "silhouette_umap": 0.7449,
+      "ARI_citra_vs_spektrum": 0.5955
+    },
+    {
+      "k": 7,
+      "silhouette": 0.2574,
+      "davies_bouldin": 1.6593,
+      "bic_gmm": -1159397.3738,
+      "stabilitas_ari": 0.7768,
+      "inersia": 15520.0244,
+      "silhouette_umap": 0.8442,
+      "ARI_citra_vs_spektrum": 0.5366
+    },
+    {
+      "k": 8,
+      "silhouette": 0.2293,
+      "davies_bouldin": 1.7824,
+      "bic_gmm": -1158239.4956,
+      "stabilitas_ari": 0.894,
+      "inersia": 14608.1428,
+      "silhouette_umap": 0.7872,
+      "ARI_citra_vs_spektrum": 0.4315
+    },
+    {
+      "k": 9,
+      "silhouette": 0.206,
+      "davies_bouldin": 1.8919,
+      "bic_gmm": -1191361.4183,
+      "stabilitas_ari": 0.9147,
+      "inersia": 14102.1358,
+      "silhouette_umap": 0.7377,
+      "ARI_citra_vs_spektrum": 0.3818
+    },
+    {
+      "k": 10,
+      "silhouette": 0.1998,
+      "davies_bouldin": 1.9042,
+      "bic_gmm": -1200958.2849,
+      "stabilitas_ari": 0.9353,
+      "inersia": 13776.2201,
+      "silhouette_umap": 0.6513,
+      "ARI_citra_vs_spektrum": 0.3639
+    },
+    {
+      "k": 11,
+      "silhouette": 0.185,
+      "davies_bouldin": 1.9647,
+      "bic_gmm": -1210761.7261,
+      "stabilitas_ari": 0.8162,
+      "inersia": 13419.989,
+      "silhouette_umap": 0.601,
+      "ARI_citra_vs_spektrum": 0.3152
+    },
+    {
+      "k": 12,
+      "silhouette": 0.1794,
+      "davies_bouldin": 2.0292,
+      "bic_gmm": -1222952.0855,
+      "stabilitas_ari": 0.8682,
+      "inersia": 13097.3579,
+      "silhouette_umap": 0.5565,
+      "ARI_citra_vs_spektrum": 0.2878
+    },
+    {
+      "k": 13,
+      "silhouette": 0.1693,
+      "davies_bouldin": 2.064,
+      "bic_gmm": -1228720.6022,
+      "stabilitas_ari": 0.838,
+      "inersia": 12811.5196,
+      "silhouette_umap": 0.5116,
+      "ARI_citra_vs_spektrum": 0.2581
+    },
+    {
+      "k": 14,
+      "silhouette": 0.1556,
+      "davies_bouldin": 2.1187,
+      "bic_gmm": -1242115.0496,
+      "stabilitas_ari": 0.8067,
+      "inersia": 12548.0386,
+      "silhouette_umap": 0.4928,
+      "ARI_citra_vs_spektrum": 0.2378
+    },
+    {
+      "k": 15,
+      "silhouette": 0.155,
+      "davies_bouldin": 2.1385,
+      "bic_gmm": -1245771.1043,
+      "stabilitas_ari": 0.8297,
+      "inersia": 12415.2098,
+      "silhouette_umap": 0.4466,
+      "ARI_citra_vs_spektrum": 0.2263
+    },
+    {
+      "k": 16,
+      "silhouette": 0.1513,
+      "davies_bouldin": 2.1834,
+      "bic_gmm": -1253489.8239,
+      "stabilitas_ari": 0.9093,
+      "inersia": 12038.9383,
+      "silhouette_umap": 0.4403,
+      "ARI_citra_vs_spektrum": 0.2194
+    },
+    {
+      "k": 17,
+      "silhouette": 0.1508,
+      "davies_bouldin": 2.1347,
+      "bic_gmm": -1248117.5813,
+      "stabilitas_ari": 0.8802,
+      "inersia": 11914.5789,
+      "silhouette_umap": 0.423,
+      "ARI_citra_vs_spektrum": 0.1904
+    },
+    {
+      "k": 18,
+      "silhouette": 0.146,
+      "davies_bouldin": 2.1346,
+      "bic_gmm": -1261445.3435,
+      "stabilitas_ari": 0.8178,
+      "inersia": 11769.7313,
+      "silhouette_umap": 0.4104,
+      "ARI_citra_vs_spektrum": 0.1832
+    },
+    {
+      "k": 19,
+      "silhouette": 0.1461,
+      "davies_bouldin": 2.1099,
+      "bic_gmm": -1262368.5455,
+      "stabilitas_ari": 0.7994,
+      "inersia": 11566.3951,
+      "silhouette_umap": 0.4162,
+      "ARI_citra_vs_spektrum": 0.1737
+    },
+    {
+      "k": 20,
+      "silhouette": 0.1413,
+      "davies_bouldin": 2.1042,
+      "bic_gmm": -1265473.1524,
+      "stabilitas_ari": 0.8709,
+      "inersia": 11380.3855,
+      "silhouette_umap": 0.4025,
+      "ARI_citra_vs_spektrum": 0.163
+    }
+  ],
+  "img": "runs/t3_ssl_img_s0/emb_img.npy",
+  "spec": "runs/t3_ssl_joint_s0/emb_spec.npy"
+}
