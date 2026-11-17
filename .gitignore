@@ -27,3 +27,6 @@ Thumbs.db
 # dataset dari dosen
 data_uts_dl/
 logs/
+
+# laporan: HTML antara dari laporan/buat_pdf.py (yang dikumpulkan laporan.pdf)
+laporan/laporan.html

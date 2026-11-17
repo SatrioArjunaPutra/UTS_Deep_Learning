@@ -1,6 +1,6 @@
 # Task 2 — Prediksi Remaining Useful Life (RUL) Mesin Press
 
-Penulis bab: Marchel. Semua angka berasal dari `runs/<run>/metrics.json` (tabel model:
+Penulis bab: M Marcheliano Taji Suryana. Semua angka berasal dari `runs/<run>/metrics.json` (tabel model:
 `runs/t2_tabel/model.csv`; tabel lengkap: `docs/tabel_laporan.md`). Kode di `kode/task2_rul/`.
 Evaluasi utama memakai **titik potong**: untuk tiap mesin validasi diambil 5 siklus acak (siklus ≥ 50),
 dan RUL diprediksi dari window yang berakhir di siklus itu. Cara ini meniru data uji, yang berhenti di
