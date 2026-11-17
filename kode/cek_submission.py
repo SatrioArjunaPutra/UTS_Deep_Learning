@@ -113,6 +113,9 @@ def cek(files=None, ids=None):
 
 
 def main():
+    # Konsol Windows (cp1252) tidak bisa mencetak simbol seperti "∈" saat output dialihkan ke file/pipe.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--file", nargs="*", help="default: ketiga file di root repo")
     ap.add_argument("--data", default=None, help="folder data: ID test/sampel diambil otomatis dari sini")
