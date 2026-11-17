@@ -3,7 +3,7 @@
 Default: 300 unit Task 1 (train) + 100 unit test, 30 mesin Task 2 (train) + 10 test,
 300 sampel Task 3. Kolom `indeks` di meta ditulis ulang agar tetap = posisi di npz.
 
-    python kode/buat_subset.py --data data_uts_dl --out data_kecil
+    python kode/common/buat_subset.py --data data_uts_dl --out data_kecil
 """
 import argparse
 import os

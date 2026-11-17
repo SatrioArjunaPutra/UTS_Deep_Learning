@@ -8,7 +8,7 @@ Diukur tanpa label:
 
 Output: laporan_figs/task3/eda_*.png dan runs/t3_eda/metrics.json
 
-    python kode/task3_eda.py --data data_uts_dl
+    python kode/task3_cluster/task3_eda.py --data data_uts_dl
 """
 import argparse
 import os
@@ -21,7 +21,9 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from scipy.ndimage import median_filter  # noqa: E402
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import buat_run, folder_figur, simpan_metrics  # noqa: E402
 
 

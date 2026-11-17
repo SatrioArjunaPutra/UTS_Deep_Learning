@@ -13,7 +13,7 @@ Konfigurasi dasar setiap grup bisa diubah lewat --fusion/--extra agar grup berik
 memakai pilihan terbaik dari grup sebelumnya. Hasil tabel: runs/t1_tabel/*.csv dan
 laporan_figs/task1/*.png.
 
-    python kode/task1_eksperimen.py --grup modality
+    python kode/task1_klasifikasi/task1_eksperimen.py --grup modality
 """
 import argparse
 import os
@@ -27,7 +27,9 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import ROOT, baca_json, config_beda, folder_figur  # noqa: E402
 from metrik import KELAS  # noqa: E402
 

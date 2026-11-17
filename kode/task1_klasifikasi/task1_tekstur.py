@@ -10,7 +10,7 @@ murni karena lini, bukan karena cacat. Yang dihitung (runs/t1_tekstur/metrics.js
 - porsi energi cincin dalam ±20° dari arah puncak tiap gambar (garis berarah vs butiran tak berarah).
 Figur: laporan_figs/task1/domain_fourier.png (log rasio spektrum daya rata-rata B / A).
 
-    python kode/task1_tekstur.py --data data_uts_dl
+    python kode/task1_klasifikasi/task1_tekstur.py --data data_uts_dl
 """
 import argparse
 import os
@@ -22,7 +22,9 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import buat_run, folder_figur, set_seed, simpan_metrics  # noqa: E402
 
 

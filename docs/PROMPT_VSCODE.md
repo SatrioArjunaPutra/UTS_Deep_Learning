@@ -28,7 +28,7 @@ Simpan ke docs/rencana.md lalu berhenti.
 
 **P0.2**
 ```
-Buat kode/buat_subset.py yang mengambil subset kecil (mis. 300 unit Task 1,
+Buat kode/common/buat_subset.py yang mengambil subset kecil (mis. 300 unit Task 1,
 30 mesin Task 2, 300 sampel Task 3) dari --data ke --out dengan struktur folder
 yang sama, supaya kode bisa diuji di CPU laptop. Berhenti setelah selesai.
 ```
@@ -46,7 +46,7 @@ Untuk sekarang hanya memanggil fungsi kosong per task dan mencetak versi library
 
 **P1.1 EDA**
 ```
-Buat kode/task1_eda.py: contoh gambar dan plot sinyal per kelas, distribusi kelas,
+Buat kode/task1_klasifikasi/task1_eda.py: contoh gambar dan plot sinyal per kelas, distribusi kelas,
 persentase sensor hilang per kelas dan per jalur, perbedaan distribusi train vs test
 per jalur produksi. Simpan gambar ke laporan_figs/task1/. Uji dengan --data data_kecil.
 ```

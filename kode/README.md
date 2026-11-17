@@ -31,7 +31,7 @@ data_uts_dl/
   clustering.npz  clustering_meta.csv
 ```
 
-Data tidak di-commit (lihat `.gitignore`). `python kode/buat_subset.py` membuat `data_kecil/`
+Data tidak di-commit (lihat `.gitignore`). `python kode/common/buat_subset.py` membuat `data_kecil/`
 untuk uji cepat di CPU.
 
 ## 3. Satu perintah reproduksi
@@ -91,13 +91,31 @@ weights/task3/spec/enc_spec.pt, norm.json
   https://download.pytorch.org/models/resnet18-f37072fd.pth), dipakai tanpa fine-tuning.
 - Tidak ada data eksternal yang dipakai. Model lain dilatih dari nol.
 
-## 7. Struktur skrip
+## 7. Struktur folder `kode/`
+
+```
+kode/
+├── README.md              # file ini
+├── reproduce.py           # SATU perintah untuk semua angka laporan + 3 file prediksi
+├── cek_submission.py      # cek format & himpunan ID ketiga file prediksi
+├── metrik.py              # metrik penilaian (macro-F1, RMSE, skor asimetris, ...)
+├── requirements.txt
+├── 00_setup_colab.ipynb
+├── common/                # utilitas bersama (seed, folder run, config.json) + alat data
+├── task1_klasifikasi/     # Task 1: klasifikasi cacat multimodal
+├── task2_rul/             # Task 2: prediksi RUL
+└── task3_cluster/         # Task 3: clustering multimodal tanpa label
+```
+
+Tiap folder punya `README.md` sendiri (isi file, urutan menjalankan, output).
 
 | Task | Skrip (urutan) |
 |---|---|
-| umum | `common.py`, `metrik.py`, `cek_submission.py`, `buat_subset.py`, `ringkas_data.py`, `tabel_laporan.py` |
+| umum | `common/` (`__init__.py`, `buat_subset.py`, `ringkas_data.py`), `metrik.py`, `cek_submission.py`, `tabel_laporan.py` |
 | 1 | `task1_eda.py` → `task1_data.py`/`task1_model.py`/`task1_train.py` → `task1_noise.py` → `task1_tekstur.py` (analisis Fourier lini A vs B) → `task1_eksperimen.py --grup {sanity,modality,noise,domain,missing,final}` |
 | 2 | `task2_eda.py` → `task2_prep.py`/`task2_model.py`/`task2_train.py` → `task2_eksperimen.py --grup {tune,model,window,uncert,final}` |
 | 3 | `task3_eda.py` → `task3_ssl.py --modal {img,spec,joint,pretrained}` → `task3_cluster.py --tahap {banding,k,final}` |
 
-Uji cepat di CPU: `--data data_kecil --smoke` (subset dari `buat_subset.py`).
+`reproduce.py` mencari skrip di `kode/` lalu di tiap folder task, jadi cukup dijalankan dari root repo.
+
+Uji cepat di CPU: `--data data_kecil --smoke` (subset dari `common/buat_subset.py`).

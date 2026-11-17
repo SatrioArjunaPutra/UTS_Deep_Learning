@@ -29,7 +29,10 @@ import numpy as np
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+# kode/ dipecah per task: common/ (paket bersama) + satu folder per task.
+# kode/ sendiri tetap dicari lebih dulu agar skrip yang belum dipindah juga ketemu.
+FOLDER_TASK = ["task1_klasifikasi", "task2_rul", "task3_cluster"]
+sys.path[:0] = [HERE] + [os.path.join(HERE, d) for d in FOLDER_TASK]
 from common import ROOT, set_seed, simpan_json, versi_library  # noqa: E402
 
 W = os.path.join(ROOT, "weights")
@@ -62,8 +65,16 @@ FINAL = {
 PATH_FINAL = os.path.join(W, "final.json")
 
 
+def cari_skrip(script):
+    """Path lengkap skrip: dicari di kode/ lalu di tiap folder task."""
+    for d in [HERE] + [os.path.join(HERE, f) for f in FOLDER_TASK]:
+        if os.path.exists(os.path.join(d, script)):
+            return os.path.join(d, script)
+    raise FileNotFoundError(f"{script} tidak ada di kode/ maupun {FOLDER_TASK}")
+
+
 def py(script, *args):
-    cmd = [sys.executable, os.path.join(HERE, script)] + [str(a) for a in args]
+    cmd = [sys.executable, cari_skrip(script)] + [str(a) for a in args]
     print(">>", " ".join(cmd), flush=True)
     subprocess.run(cmd, check=True, env={**os.environ, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"})
 

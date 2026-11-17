@@ -8,7 +8,7 @@ Output:
 - laporan_figs/task1/eda_shift_lini.png       : perbedaan train vs test per lini
 - runs/t1_eda/metrics.json                    : semua angka EDA yang dikutip di laporan
 
-    python kode/task1_eda.py --data data_uts_dl
+    python kode/task1_klasifikasi/task1_eda.py --data data_uts_dl
 """
 import argparse
 import os
@@ -20,7 +20,9 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import buat_run, folder_figur, simpan_metrics  # noqa: E402
 from metrik import KELAS  # noqa: E402
 

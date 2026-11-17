@@ -13,7 +13,7 @@ Yang diringkas:
 - .md / .txt / .json: potongan awal isi
 
 Contoh:
-    python kode/ringkas_data.py --data /content/data --out docs/ringkasan_data.txt
+    python kode/common/ringkas_data.py --data /content/data --out docs/ringkasan_data.txt
 """
 import argparse
 import io
