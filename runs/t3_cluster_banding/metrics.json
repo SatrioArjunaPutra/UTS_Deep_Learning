@@ -1,0 +1,184 @@
+{
+  "tabel": [
+    {
+      "k": 6,
+      "img": "simclr_img",
+      "spec": "simclr_spec",
+      "ARI_img_vs_spec": 0.5955,
+      "NMI_img_mikroskop": 0.0,
+      "NMI_spec_mikroskop": 0.0,
+      "sil_img": 0.4424,
+      "sil_spec": 0.2754
+    },
+    {
+      "k": 6,
+      "img": "simclr_img",
+      "spec": "joint_spec",
+      "ARI_img_vs_spec": 0.5955,
+      "NMI_img_mikroskop": 0.0,
+      "NMI_spec_mikroskop": 0.0,
+      "sil_img": 0.4424,
+      "sil_spec": 0.2697
+    },
+    {
+      "k": 6,
+      "img": "simclr_img",
+      "spec": "klasik_spec (median+baseline+PCA)",
+      "ARI_img_vs_spec": 0.6407,
+      "NMI_img_mikroskop": 0.0,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.4424,
+      "sil_spec": 0.2591
+    },
+    {
+      "k": 6,
+      "img": "joint_img",
+      "spec": "simclr_spec",
+      "ARI_img_vs_spec": 0.5957,
+      "NMI_img_mikroskop": 0.0,
+      "NMI_spec_mikroskop": 0.0,
+      "sil_img": 0.4145,
+      "sil_spec": 0.2754
+    },
+    {
+      "k": 6,
+      "img": "joint_img",
+      "spec": "joint_spec",
+      "ARI_img_vs_spec": 0.5957,
+      "NMI_img_mikroskop": 0.0,
+      "NMI_spec_mikroskop": 0.0,
+      "sil_img": 0.4145,
+      "sil_spec": 0.2697
+    },
+    {
+      "k": 6,
+      "img": "joint_img",
+      "spec": "klasik_spec (median+baseline+PCA)",
+      "ARI_img_vs_spec": 0.641,
+      "NMI_img_mikroskop": 0.0,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.4145,
+      "sil_spec": 0.2591
+    },
+    {
+      "k": 6,
+      "img": "pretrained_resnet18",
+      "spec": "simclr_spec",
+      "ARI_img_vs_spec": 0.4701,
+      "NMI_img_mikroskop": 0.0066,
+      "NMI_spec_mikroskop": 0.0,
+      "sil_img": 0.3683,
+      "sil_spec": 0.2754
+    },
+    {
+      "k": 6,
+      "img": "pretrained_resnet18",
+      "spec": "joint_spec",
+      "ARI_img_vs_spec": 0.47,
+      "NMI_img_mikroskop": 0.0066,
+      "NMI_spec_mikroskop": 0.0,
+      "sil_img": 0.3683,
+      "sil_spec": 0.2697
+    },
+    {
+      "k": 6,
+      "img": "pretrained_resnet18",
+      "spec": "klasik_spec (median+baseline+PCA)",
+      "ARI_img_vs_spec": 0.5235,
+      "NMI_img_mikroskop": 0.0066,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.3683,
+      "sil_spec": 0.2591
+    },
+    {
+      "k": 10,
+      "img": "simclr_img",
+      "spec": "simclr_spec",
+      "ARI_img_vs_spec": 0.3636,
+      "NMI_img_mikroskop": 0.0076,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.2878,
+      "sil_spec": 0.2459
+    },
+    {
+      "k": 10,
+      "img": "simclr_img",
+      "spec": "joint_spec",
+      "ARI_img_vs_spec": 0.3639,
+      "NMI_img_mikroskop": 0.0076,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.2878,
+      "sil_spec": 0.237
+    },
+    {
+      "k": 10,
+      "img": "simclr_img",
+      "spec": "klasik_spec (median+baseline+PCA)",
+      "ARI_img_vs_spec": 0.3125,
+      "NMI_img_mikroskop": 0.0076,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.2878,
+      "sil_spec": 0.242
+    },
+    {
+      "k": 10,
+      "img": "joint_img",
+      "spec": "simclr_spec",
+      "ARI_img_vs_spec": 0.3559,
+      "NMI_img_mikroskop": 0.0067,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.2431,
+      "sil_spec": 0.2459
+    },
+    {
+      "k": 10,
+      "img": "joint_img",
+      "spec": "joint_spec",
+      "ARI_img_vs_spec": 0.357,
+      "NMI_img_mikroskop": 0.0067,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.2431,
+      "sil_spec": 0.237
+    },
+    {
+      "k": 10,
+      "img": "joint_img",
+      "spec": "klasik_spec (median+baseline+PCA)",
+      "ARI_img_vs_spec": 0.3224,
+      "NMI_img_mikroskop": 0.0067,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.2431,
+      "sil_spec": 0.242
+    },
+    {
+      "k": 10,
+      "img": "pretrained_resnet18",
+      "spec": "simclr_spec",
+      "ARI_img_vs_spec": 0.3359,
+      "NMI_img_mikroskop": 0.0138,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.3283,
+      "sil_spec": 0.2459
+    },
+    {
+      "k": 10,
+      "img": "pretrained_resnet18",
+      "spec": "joint_spec",
+      "ARI_img_vs_spec": 0.3362,
+      "NMI_img_mikroskop": 0.0138,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.3283,
+      "sil_spec": 0.237
+    },
+    {
+      "k": 10,
+      "img": "pretrained_resnet18",
+      "spec": "klasik_spec (median+baseline+PCA)",
+      "ARI_img_vs_spec": 0.2933,
+      "NMI_img_mikroskop": 0.0138,
+      "NMI_spec_mikroskop": 0.0001,
+      "sil_img": 0.3283,
+      "sil_spec": 0.242
+    }
+  ]
+}

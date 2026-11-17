@@ -1,0 +1,131 @@
+{
+  "k": 8,
+  "metode": {
+    "kmeans": {
+      "silhouette_fusion": 0.22933016675554602,
+      "davies_bouldin": 1.782379238071866,
+      "nmi_mikroskop": 3.77491976466091e-05,
+      "ukuran_cluster": [
+        4343,
+        4482,
+        4256,
+        3656,
+        4294,
+        4979,
+        4203,
+        5787
+      ],
+      "stabilitas_3seed": 1.0
+    },
+    "gmm": {
+      "silhouette_fusion": 0.22394222881147072,
+      "davies_bouldin": 1.8152086916330172,
+      "nmi_mikroskop": 3.724790922462951e-05,
+      "ukuran_cluster": [
+        3656,
+        4271,
+        4489,
+        8637,
+        4979,
+        3088,
+        4196,
+        2684
+      ],
+      "stabilitas_3seed": 0.8013222521899118
+    },
+    "dec": {
+      "silhouette_fusion": 0.2291927862539488,
+      "davies_bouldin": 1.7838380776304457,
+      "nmi_mikroskop": 5.083505690775809e-05,
+      "ukuran_cluster": [
+        4979,
+        4584,
+        4269,
+        4337,
+        4101,
+        3656,
+        5774,
+        4300
+      ],
+      "stabilitas_3seed": 0.8835350019644568,
+      "silhouette_ruang_dec": 0.5105012059211731,
+      "iterasi": 4,
+      "ARI_vs_init_kmeans": 0.9942220113969314
+    }
+  },
+  "ARI_antar_metode": {
+    "kmeans_vs_gmm": 0.8164246580611302,
+    "kmeans_vs_dec": 0.9910016588890842,
+    "gmm_vs_dec": 0.8137304307572967
+  },
+  "modality": {
+    "image_only": {
+      "silhouette": 0.2997821569442749,
+      "ARI_vs_fusion": 0.6925566212333345,
+      "nmi_mikroskop": 0.007643257314991278
+    },
+    "spectrum_only": {
+      "silhouette": 0.25240838527679443,
+      "ARI_vs_fusion": 0.7397835617431083,
+      "nmi_mikroskop": 4.700101417556039e-05
+    },
+    "ARI_image_vs_spectrum": 0.43153145804465626
+  },
+  "cluster_sulit": {
+    "silhouette_per_cluster": {
+      "0": 0.2425,
+      "1": 0.203,
+      "2": 0.1635,
+      "3": 0.3578,
+      "4": 0.2622,
+      "5": 0.3177,
+      "6": 0.1836,
+      "7": 0.148
+    },
+    "pasangan_terdekat": [
+      {
+        "pasangan": [
+          2,
+          7
+        ],
+        "jarak_pusat": 0.5380366282611444
+      },
+      {
+        "pasangan": [
+          1,
+          6
+        ],
+        "jarak_pusat": 0.6483881986212285
+      },
+      {
+        "pasangan": [
+          0,
+          4
+        ],
+        "jarak_pusat": 0.8005464574904836
+      },
+      {
+        "pasangan": [
+          3,
+          5
+        ],
+        "jarak_pusat": 0.9743654322095868
+      }
+    ],
+    "frac_sampel_ambigu_gmm(p2>0.2)": 0.005388888888888889,
+    "mikroskop_per_cluster_frac_M2": {
+      "0": 0.399,
+      "1": 0.388,
+      "2": 0.4,
+      "3": 0.407,
+      "4": 0.4,
+      "5": 0.402,
+      "6": 0.395,
+      "7": 0.4
+    }
+  },
+  "img": "runs/t3_ssl_img_s0/emb_img.npy",
+  "spec": "runs/t3_ssl_joint_s0/emb_spec.npy",
+  "w": 0.5,
+  "metode_final": "kmeans"
+}
