@@ -1,0 +1,41 @@
+{
+  "nama": "t3_cluster_k",
+  "waktu": "2026-11-17 08:45:36",
+  "argumen": {
+    "data": "data_uts_dl",
+    "tahap": "k",
+    "img": "runs/t3_ssl_img_s0/emb_img.npy",
+    "spec": "runs/t3_ssl_joint_s0/emb_spec.npy",
+    "w": 0.5,
+    "k": 8,
+    "k_min": 2,
+    "k_max": 20,
+    "k_banding": [
+      6,
+      10
+    ],
+    "metode": "auto",
+    "metode_stab": [
+      "kmeans",
+      "gmm",
+      "dec"
+    ],
+    "tanpa_umap": false,
+    "nama": "t3_cluster_k",
+    "seed": 0
+  },
+  "versi": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.14.1+cu126",
+    "torchvision": "0.29.1+cu126",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "umap": "0.6.0",
+    "lightgbm": "4.7.0",
+    "cuda": "12.6",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  }
+}

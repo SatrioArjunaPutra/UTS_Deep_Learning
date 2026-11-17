@@ -1,0 +1,36 @@
+{
+  "n_ditandai": 1241,
+  "frac_ditandai": 0.025854166666666668,
+  "ditandai_per_kelas_label": {
+    "normal": 272,
+    "retak": 249,
+    "gores": 242,
+    "gelembung": 183,
+    "noda": 175,
+    "las_dingin": 92,
+    "kontaminasi": 28
+  },
+  "ditandai_per_lini": {
+    "A": 980,
+    "B": 261
+  },
+  "pasangan_terbanyak": {
+    "normal->las_dingin": 161,
+    "retak->normal": 131,
+    "gores->normal": 121,
+    "gelembung->noda": 121,
+    "noda->gelembung": 107,
+    "retak->gores": 104,
+    "gores->retak": 95,
+    "las_dingin->normal": 92
+  },
+  "oof_macro_f1": 0.8647104779699389,
+  "oof_akurasi": 0.8844166666666666,
+  "ambang": {
+    "p_label <": 0.05,
+    "p_maks >": 0.8
+  },
+  "frac_p_label_kurang_0.5": 0.13847916666666665,
+  "n_ditandai_di_latih_dibuang": 960,
+  "n_ditandai_di_validasi_tetap": 281
+}

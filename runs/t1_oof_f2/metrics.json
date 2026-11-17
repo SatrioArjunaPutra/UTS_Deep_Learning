@@ -1,0 +1,34 @@
+{
+  "macro_f1": 0.8747344560048333,
+  "akurasi": 0.8920833333333333,
+  "f1_per_kelas": {
+    "normal": 0.9185594434213219,
+    "gores": 0.8204651162790698,
+    "noda": 0.8923884514435696,
+    "retak": 0.7785817655571635,
+    "gelembung": 0.8338323353293413,
+    "las_dingin": 0.943728018757327,
+    "kontaminasi": 0.9355860612460402
+  },
+  "macro_f1_per_grup": {
+    "A": 0.9055758730416918,
+    "B": 0.7783671993342016
+  },
+  "macro_f1_bobot_test": 0.8305974754402277,
+  "macro_f1_tanpa_sensor": 0.6295365081158468,
+  "f1_per_kelas_tanpa_sensor": {
+    "normal": 0.8319897398314401,
+    "gores": 0.695,
+    "noda": 0.8713178294573644,
+    "retak": 0.5241276911655531,
+    "gelembung": 0.562242374278648,
+    "las_dingin": 0.0,
+    "kontaminasi": 0.922077922077922
+  },
+  "n_val_sensor_hilang_asli": 440,
+  "macro_f1_sensor_hilang_asli": 0.6505089120826023,
+  "epoch_terbaik_val_f1": 15,
+  "val_f1_terbaik": 0.8747344560048333,
+  "waktu_detik": 457.4,
+  "n_param": 2493415
+}

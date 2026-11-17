@@ -1,0 +1,43 @@
+{
+  "nama": "t1_final_s1",
+  "waktu": "2026-11-16 21:42:40",
+  "argumen": {
+    "data": "data_uts_dl",
+    "nama": "t1_final_s1",
+    "modal": "fusion",
+    "fusion": "xattn",
+    "epochs": 25,
+    "bs": 256,
+    "lr": 0.002,
+    "wd": 0.0005,
+    "ls": 0.0,
+    "norm": "global",
+    "aug": false,
+    "line_reweight": false,
+    "aug_tekstur": 0.0,
+    "mod_drop": 0.25,
+    "drop_ids": "runs/t1_noise/mungkin_salah_label.csv",
+    "kfold": 0,
+    "fold": 0,
+    "seed": 1,
+    "save_test": true,
+    "overfit_batch": false,
+    "overfit_steps": 300,
+    "smoke": false,
+    "runs_dir": null
+  },
+  "versi": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.14.1+cu126",
+    "torchvision": "0.29.1+cu126",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "umap": "0.6.0",
+    "lightgbm": "4.7.0",
+    "cuda": "12.6",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  }
+}
