@@ -49,8 +49,8 @@ dengan data). Ringkasan angka disimpan di `runs/reproduce/hasil.json`.
 Satu task saja: `--task 1`, `--task 2`, atau `--task 3`. Cek file prediksi secara terpisah:
 `python kode/cek_submission.py --data data_uts_dl`.
 
-Waktu mode cepat `--task all` di laptop RTX 3050 4 GB: ± 70 detik total (Task 1 ± 14 s, Task 2 ± 4 s,
-Task 3 ± 43 s, sisanya memuat data dan `cek_submission`).
+Waktu mode cepat `--task all` di laptop RTX 3050 4 GB: ± 2 menit total (diukur 112 detik pada 17 Nov 2026,
+termasuk memuat data dan `cek_submission`).
 
 ## 4. Konfigurasi final, seed, dan determinisme
 

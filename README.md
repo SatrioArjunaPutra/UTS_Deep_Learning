@@ -19,6 +19,12 @@ Semua model utama dibangun dengan PyTorch. Metode klasik hanya dipakai sebagai b
 | 2 | Regresi RUL mesin press | Deret waktu sensor per siklus | Model sekuens (GRU) dengan window kausal, MC dropout untuk ketidakpastian | `prediksi_rul.csv` |
 | 3 | Clustering material tanpa label | Gambar mikrostruktur + spektrum komposisi | Encoder SimCLR gambar & spektrum, fusi embedding, K-Means | `cluster.csv` |
 
+**Penjelasan tiap task** (masalah, alur model, alasan setiap pilihan, hasil, cara menjalankan):
+
+- Task 1 → [`kode/task1_klasifikasi/README.md`](kode/task1_klasifikasi/README.md)
+- Task 2 → [`kode/task2_rul/README.md`](kode/task2_rul/README.md)
+- Task 3 → [`kode/task3_cluster/README.md`](kode/task3_cluster/README.md)
+
 Hasil, analisis, dan semua angka ada di `laporan.pdf`. Setiap angka berasal dari
 `runs/<nama_run>/metrics.json` yang dihasilkan kode.
 
