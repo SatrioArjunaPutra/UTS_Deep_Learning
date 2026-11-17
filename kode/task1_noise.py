@@ -87,6 +87,15 @@ def main():
         "ambang": {"p_label <": a.ambang_label, "p_maks >": a.ambang_lain},
         "frac_p_label_kurang_0.5": float((p_label < 0.5).mean()),
     }
+    # Kandidat dibuang HANYA dari bagian latih split utama (task1_train.py --drop_ids); yang jatuh di
+    # bagian validasi tetap dipakai apa adanya agar validasi tidak diubah. Catat keduanya untuk laporan.
+    from task1_data import split_validasi
+
+    _, idx_va = split_validasi(meta, 0.2, seed=0)
+    di_va = np.zeros(len(meta), bool)
+    di_va[idx_va] = True
+    hasil["n_ditandai_di_latih_dibuang"] = int((tandai & ~di_va).sum())
+    hasil["n_ditandai_di_validasi_tetap"] = int((tandai & di_va).sum())
     simpan_metrics(run, hasil)
 
     # contoh gambar yang ditandai

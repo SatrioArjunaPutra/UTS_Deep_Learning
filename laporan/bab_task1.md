@@ -79,13 +79,17 @@ menilai secara visual wajar melewatkannya; (2) pasangan simetris **gelembung ↔
 — kelas yang mirip secara visual, sehingga sebagian kasus lebih tepat disebut ambigu daripada salah tulis.
 
 **Teknik tahan noise** (xattn, konfigurasi lain identik; sampel hanya dibuang dari data *latih*,
-himpunan validasi tidak diubah):
+himpunan validasi tidak diubah). Dari 1.241 kandidat, **960 berada di bagian latih dan dibuang**; 281 berada di
+bagian validasi dan tetap dipakai apa adanya (`runs/t1_noise/metrics.json`). Catatan: model OOF dilatih dengan
+5-fold atas seluruh data latih, termasuk sampel yang kemudian menjadi validasi. Validasi tidak pernah diubah dan
+model final tidak pernah dilatih padanya, tetapi daftar kandidat secara tidak langsung ikut dipengaruhi label
+validasi; pengaruh ini kami anggap kecil, dan versi yang sepenuhnya bersih adalah menjalankan OOF hanya di bagian latih.
 
 | Run | Macro-F1 | Lini A | Lini B | Tertimbang test |
 |---|---|---|---|---|
 | baseline | 0,8440 | 0,8731 | 0,7539 | 0,8025 |
 | label smoothing 0,1 | 0,8436 | 0,8726 | 0,7561 | 0,8030 |
-| buang 1.241 kandidat salah label | **0,8521** | **0,8827** | **0,7593** | **0,8091** |
+| buang 960 kandidat salah label (bagian latih) | **0,8521** | **0,8827** | **0,7593** | **0,8091** |
 
 Label smoothing tidak mengubah skor; membuang kandidat salah label menaikkan macro-F1 +0,008. Catatan
 jujur: label validasi juga berasal dari inspektur (ikut noisy), dan ini hasil satu seed, sehingga kenaikan
@@ -164,7 +168,7 @@ di model final.
 - Model yang dievaluasi selalu model **epoch terakhir** (jadwal OneCycle), bukan epoch terbaik di validasi,
   agar skor validasi tidak bias oleh pemilihan epoch.
 - **Konfigurasi final** (dipilih di validasi dengan aturan yang ditetapkan sebelum melihat hasil: macro-F1
-  tertimbang komposisi test): fusi xattn + buang 1.241 kandidat salah label (1d) + modality dropout 25% (1f);
+  tertimbang komposisi test): fusi xattn + buang 960 kandidat salah label di bagian latih (1d) + modality dropout 25% (1f);
   tidak ada teknik domain (1e) karena tidak satu pun menaikkan skor tertimbang. 25 epoch, AdamW (lr 2·10⁻³,
   wd 5·10⁻⁴), OneCycle, batch 256; dilatih dengan **3 seed (0, 1, 2)** pada split validasi yang sama.
 

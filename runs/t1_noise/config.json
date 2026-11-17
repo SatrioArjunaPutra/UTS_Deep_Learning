@@ -1,6 +1,6 @@
 {
   "nama": "t1_noise",
-  "waktu": "2026-11-16 19:13:36",
+  "waktu": "2026-11-17 10:06:55",
   "argumen": {
     "data": "data_uts_dl",
     "k": 5,
@@ -8,7 +8,8 @@
     "fusion": "xattn",
     "ambang_label": 0.05,
     "ambang_lain": 0.8,
-    "lewati_training": true
+    "lewati_training": true,
+    "seed": 0
   },
   "versi": {
     "python": "3.12.10",

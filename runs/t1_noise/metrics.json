@@ -30,5 +30,7 @@
     "p_label <": 0.05,
     "p_maks >": 0.8
   },
-  "frac_p_label_kurang_0.5": 0.13847916666666665
+  "frac_p_label_kurang_0.5": 0.13847916666666665,
+  "n_ditandai_di_latih_dibuang": 960,
+  "n_ditandai_di_validasi_tetap": 281
 }
