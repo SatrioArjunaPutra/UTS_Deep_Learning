@@ -6,7 +6,7 @@ Repositori kelompok: https://github.com/marcheliano-satrio/UTS_Deep_Learning
 | Nama | GitHub | Peran utama | Pull request |
 |---|---|---|---|
 | Satrio Arjuna Putra | `SatrioArjunaPutra` | Kerangka repo dan aturan proyek; **Task 1** (klasifikasi multimodal) dan **Task 3** (clustering multimodal) utuh; integrasi `reproduce.py`, `kode/README.md`, `weights/`, ketiga file prediksi; bab Task 1 dan Task 3; review & merge PR Marchel | [#1](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/1) kerangka, [#2](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/2) Task 1, [#3](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/3) Task 3, [#4](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/4) integrasi, [#5](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/5) README |
-| M Marcheliano Taji Suryana | `muhammadmarchel` | **Task 2** (RUL): memahami dan memverifikasi kode, cek kebocoran data, bab Task 2; finalisasi laporan: pendahuluan, kesimpulan, penggabungan menjadi `laporan.pdf`, `kode/tabel_laporan.py`, `docs/tabel_laporan.md`, `kontribusi.md`, `docs/persiapan_lisan.md` | [#6](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/6) Task 2, TODO: link PR laporan |
+| M Marcheliano Taji Suryana | `muhammadmarchel` | **Task 2** (RUL): memahami dan memverifikasi kode, cek kebocoran data, bab Task 2; finalisasi laporan: pendahuluan, kesimpulan, penggabungan menjadi `laporan.pdf`, `kode/tabel_laporan.py`, `docs/tabel_laporan.md`, `kontribusi.md`, `docs/persiapan_lisan.md` | [#6](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/6) Task 2, [#7](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/7) laporan, tabel, persiapan lisan, [#8](https://github.com/marcheliano-satrio/UTS_Deep_Learning/pull/8) pembaruan kontribusi |
 
 Catatan pembagian kerja: training semua task dijalankan di laptop Satrio (GPU RTX 3050). Kode Task 2 disusun
 di laptop itu lalu diserahkan ke Marchel. Marchel membaca, memverifikasi, dan menulis bab Task 2, lalu
@@ -42,8 +42,12 @@ membukanya sebagai PR #6.
   menghasilkan ulang angka yang sama dengan laporan (`runs/reproduce/hasil.json`; mis. Task 2 RMSE 19,5358
   dan skor 97.209,7, sama dengan `runs/t2_cv_gru`), dan ketiga file prediksi lolos `cek_submission.py`.
 - TODO Satrio: tambahkan pemeriksaan yang kamu lakukan sendiri untuk Task 1 dan Task 3.
-- TODO Marchel: smoke test `python kode/task2_rul/task2_train.py --data data_uts_dl --model gru --mode cv --smoke`
-  setelah data tersedia di laptop Marchel.
+- Pemeriksaan ulang Task 2 di laptop Marchel (CPU, 17 Nov 2026): smoke test
+  `python kode/task2_rul/task2_train.py --data data_uts_dl --model gru --mode cv --smoke --W 50` berjalan lancar
+  (60 mesin, 5 fold, 2 epoch); `python kode/reproduce.py --data data_uts_dl --task 2` menghasilkan ulang CV
+  RMSE 19,536 dan skor 97.209 (sama dengan laporan), dan ketiga file prediksi lolos `cek_submission.py`
+  termasuk kecocokan himpunan ID. Rata-rata prediksi uji di CPU 94,12 vs 94,08 di GPU, karena urutan angka
+  acak MC dropout berbeda antara CPU dan CUDA. `prediksi_rul.csv` resmi tetap versi GPU.
 
 AI tidak dipakai untuk mengarang angka. Bila sebuah angka belum ada di file hasil run, angka itu ditulis
 "belum dijalankan".
