@@ -23,9 +23,9 @@ Langkah:
    fusion, UMAP, cluster sulit dipisah, dan tulis cluster.csv. --metode auto memilih metode dengan
    silhouette fusion tertinggi (dibulatkan 3 desimal), seri -> stabilitas antar seed tertinggi.
 
-  python kode/task3_cluster.py --tahap banding
-  python kode/task3_cluster.py --tahap k   --img runs/t3_ssl_joint_s0/emb_img.npy --spec runs/t3_ssl_joint_s0/emb_spec.npy
-  python kode/task3_cluster.py --tahap final --k 8 --metode dec ...
+  python kode/task3_cluster/task3_cluster.py --tahap banding
+  python kode/task3_cluster/task3_cluster.py --tahap k   --img runs/t3_ssl_joint_s0/emb_img.npy --spec runs/t3_ssl_joint_s0/emb_spec.npy
+  python kode/task3_cluster/task3_cluster.py --tahap final --k 8 --metode dec ...
 """
 import argparse
 import os
@@ -44,7 +44,9 @@ from sklearn.metrics import (adjusted_rand_score, davies_bouldin_score,  # noqa:
 from sklearn.mixture import GaussianMixture  # noqa: E402
 from sklearn.preprocessing import StandardScaler  # noqa: E402
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import ROOT, buat_run, folder_figur, set_seed, simpan_json, simpan_metrics  # noqa: E402
 
 RUNS = os.path.join(ROOT, "runs")

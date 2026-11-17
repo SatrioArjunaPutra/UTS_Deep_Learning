@@ -35,7 +35,7 @@ Ringkasan isi data (hasil Colab): `docs/ringkasan_data.txt`. Urutan kerja: `docs
 ## Cara kerja kode
 
 - Semua kode di `kode/`. Path data selalu lewat argumen `--data` (jangan hard-code path Colab/laptop).
-- Laptop (CPU) diuji dengan `--data data_kecil --smoke` (subset dari `kode/buat_subset.py`).
+- Laptop (CPU) diuji dengan `--data data_kecil --smoke` (subset dari `kode/common/buat_subset.py`).
   Training penuh di Colab/Kaggle GPU.
 - Output run → `runs/<task>_<nama>_seed<k>/` (metrics.json, config.json, kurva, weights).
   Figur laporan → `laporan_figs/task{1,2,3}/`.

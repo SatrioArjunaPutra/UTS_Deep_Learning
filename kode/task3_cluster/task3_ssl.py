@@ -29,7 +29,7 @@ Mode (--modal):
 Embedding akhir = keluaran encoder (sebelum projection head). Untuk gambar dirata-rata atas
 8 transformasi dihedral (rotasi 90 derajat x flip) supaya lebih invarian rotasi.
 
-  python kode/task3_ssl.py --modal img --nama t3_ssl_img
+  python kode/task3_cluster/task3_ssl.py --modal img --nama t3_ssl_img
 """
 import argparse
 import math
@@ -42,7 +42,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import buat_run, get_device, set_seed, simpan_json, simpan_metrics  # noqa: E402
 
 

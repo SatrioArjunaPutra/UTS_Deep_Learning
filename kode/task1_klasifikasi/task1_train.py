@@ -1,10 +1,10 @@
 """Task 1 — training & evaluasi klasifikasi multimodal (satu skrip untuk semua eksperimen).
 
 Contoh:
-  python kode/task1_train.py --modal image --nama t1_image                  # image-only
-  python kode/task1_train.py --modal fusion --fusion xattn --nama t1_xattn  # fusion
-  python kode/task1_train.py --overfit_batch --nama t1_overfit              # sanity check
-  python kode/task1_train.py --smoke                                        # uji cepat
+  python kode/task1_klasifikasi/task1_train.py --modal image --nama t1_image                  # image-only
+  python kode/task1_klasifikasi/task1_train.py --modal fusion --fusion xattn --nama t1_xattn  # fusion
+  python kode/task1_klasifikasi/task1_train.py --overfit_batch --nama t1_overfit              # sanity check
+  python kode/task1_klasifikasi/task1_train.py --smoke                                        # uji cepat
 
 Pilihan yang dipakai di semua run (dan alasannya):
 - Split validasi 20% stratified per (kelas, lini) dengan seed split TETAP (0), sehingga semua
@@ -31,7 +31,9 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# folder task ini (modul task) + kode/ (paket common) masuk sys.path
+sys.path[:0] = [os.path.dirname(os.path.abspath(__file__)),
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))]
 from common import ROOT, buat_run, get_device, set_seed, simpan_json, simpan_metrics  # noqa: E402
 from metrik import KELAS, f1_per_kelas, ringkasan_klasifikasi  # noqa: E402
 from task1_data import (LINI, ambil_batch, bobot_lini_test, hitung_statistik, muat,  # noqa: E402
@@ -40,7 +42,7 @@ from task1_model import Task1Net, jumlah_parameter  # noqa: E402
 
 
 # Augmentasi tekstur (domain shift lini B). Analisis Fourier gambar `normal` DATA LATIH
-# (kode/task1_tekstur.py -> runs/t1_tekstur/metrics.json): gambar lini B punya GARIS HALUS BERARAH
+# (kode/task1_klasifikasi/task1_tekstur.py -> runs/t1_tekstur/metrics.json): gambar lini B punya GARIS HALUS BERARAH
 # dengan periode ±4 px (cincin frekuensi 13-18 siklus/64 px; porsi energi cincin ±9,8% vs ±2,2% di
 # lini A). Di dalam satu gambar energinya terkumpul di sekitar satu arah (±75% dalam ±20° dari puncak),
 # tetapi arah itu ACAK antar gambar (histogram sudut puncak merata 0-180°). Selisih energi cincin

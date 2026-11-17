@@ -45,6 +45,14 @@ Hasil, analisis, dan semua angka ada di `laporan.pdf`. Setiap angka berasal dari
 
 ## Cara menjalankan
 
+**Paling mudah: Google Colab.** Klik tombol di bawah, pilih Runtime → Change runtime type → T4 GPU,
+lalu jalankan sel berurutan. Notebook mengambil kode repo ini, mengunduh data dari tautan dosen,
+dan menjalankan `reproduce.py`.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcheliano-satrio/UTS_Deep_Learning/blob/main/kode/00_setup_colab.ipynb)
+
+**Di laptop/PC sendiri:**
+
 1. Instal (Python 3.12):
 
    ```bash

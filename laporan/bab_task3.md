@@ -5,7 +5,7 @@ Penulis bab: Satrio Arjuna Putra. Angka dari `runs/t3_eda`, `runs/t3_ssl_*`, dan
 Task 3 tidak memiliki label; atribut `mikroskop` di meta **tidak** dipakai untuk melatih atau
 mengelompokkan, hanya untuk memeriksa apakah representasi/cluster mengikuti faktor pengganggu.
 
-## 3a. Eksplorasi distorsi (`kode/task3_eda.py`, Gambar `laporan_figs/task3/eda_contoh.png`, `eda_distorsi.png`)
+## 3a. Eksplorasi distorsi (`kode/task3_cluster/task3_eda.py`, Gambar `laporan_figs/task3/eda_contoh.png`, `eda_distorsi.png`)
 
 36.000 sampel: citra mikrostruktur grayscale 64×64 dan spektrum 128 titik.
 
@@ -30,7 +30,7 @@ mengelompokkan, hanya untuk memeriksa apakah representasi/cluster mengikuti fakt
 **Kesimpulan distorsi dominan**: citra — rotasi dan perbedaan mikroskop (kecerahan + blur);
 spektrum — baseline miring/lengkung dan spike.
 
-## 3b. Representasi tanpa label (`kode/task3_ssl.py`)
+## 3b. Representasi tanpa label (`kode/task3_cluster/task3_ssl.py`)
 
 **Metode utama: SimCLR** (Chen dkk., 2020). Dua augmentasi acak dari sampel yang sama dipaksa
 berdekatan di ruang embedding (pasangan positif), sampel lain di batch menjadi negatif (loss NT-Xent,
@@ -163,7 +163,7 @@ terpisah jauh. Pemeriksaan silang: pada k = 8, K-Means dan DEC (dua cara kerja b
 hampir identik (ARI 0,9910), dan ke-8 cluster berukuran seimbang (3.656–5.787 sampel).
 
 Catatan proses: kami mula-mula hanya memakai kriteria 64-d (k = 5). UMAP (3f) memperlihatkan pulau-pulau yang
-tergabung, sehingga kriteria UMAP dan uji belah ditambahkan ke `kode/task3_cluster.py` lalu tahap `k` dan `final`
+tergabung, sehingga kriteria UMAP dan uji belah ditambahkan ke `kode/task3_cluster/task3_cluster.py` lalu tahap `k` dan `final`
 dijalankan ulang. Tidak ada label maupun atribut (mikroskop) yang dipakai dalam keputusan ini.
 
 ## 3f. Analisis: UMAP dan cluster yang sulit dipisah

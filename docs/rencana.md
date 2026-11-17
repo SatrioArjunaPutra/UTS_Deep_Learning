@@ -21,7 +21,7 @@ Meta Task 1 juga punya `lini` (A/B), `shift`, `id_mesin` (M01–M12), `batch_mat
 - Kelas tidak seimbang: normal 49,8%, kontaminasi hanya 4,9% → loss berbobot kelas, metrik macro-F1.
 - **Domain shift besar**: lini B 25% di train tetapi 60% di test. Mesin M01–M06 = lini A,
   M07–M12 = lini B. Gambar lini B lebih gelap (kecerahan 112 vs 140) dan kontrasnya lebih tinggi,
-  bergaris halus berarah (periode ±4 px, arah acak per gambar; lihat kode/task1_tekstur.py); suhu lini B ±2 °C lebih tinggi. Distribusi kelas per lini sama.
+  bergaris halus berarah (periode ±4 px, arah acak per gambar; lihat kode/task1_klasifikasi/task1_tekstur.py); suhu lini B ±2 °C lebih tinggi. Distribusi kelas per lini sama.
 - Sensor hilang **per kanal secara utuh** (tidak pernah sebagian): ~6% per kanal, ~4,9% unit
   kehilangan ketiganya; merata antar kelas dan lini, juga di test.
 - Dari rata-rata sinyal per kelas: `las_dingin` terlihat jelas di arus (plateau lebih rendah),

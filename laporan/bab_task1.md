@@ -27,7 +27,7 @@ sensor 3 kanal (suhu, getaran, arus) × 128 titik (`runs/t1_eda/metrics.json`, G
   **macro-F1 tertimbang komposisi test** (sampel validasi diberi bobot p_test(lini)/p_train(lini)).
   Bobot ini hanya memakai atribut `lini` di meta test, tanpa label.
 
-## 1b. Arsitektur (`kode/task1_model.py`)
+## 1b. Arsitektur (`kode/task1_klasifikasi/task1_model.py`)
 
 - **Encoder gambar**: CNN 4 blok (2× conv3×3-BN-ReLU + maxpool), 64×64 → 4×4×256. Cacat adalah pola
   lokal, sehingga bias induktif CNN cocok; dilatih dari nol (tanpa data/bobot eksternal).
@@ -67,7 +67,7 @@ dibaca bersama variasi antar seed di 1g.
 ## 1d. Label tidak sempurna
 
 **Deteksi.** Prediksi out-of-fold 5-fold (StratifiedKFold per kelas×lini, model xattn 15 epoch,
-modality dropout 0,1; `kode/task1_noise.py`) memberi macro-F1 OOF 0,865. Sampel ditandai *kemungkinan salah label* bila
+modality dropout 0,1; `kode/task1_klasifikasi/task1_noise.py`) memberi macro-F1 OOF 0,865. Sampel ditandai *kemungkinan salah label* bila
 p(label tercatat) < 0,05 sementara model > 0,80 yakin pada kelas lain: **1.241 unit (2,6%)**
 (`runs/t1_noise/mungkin_salah_label.csv`, contoh gambar `laporan_figs/task1/noise_contoh.png`,
 matriks `noise_matriks.png`). Proporsi per lini (980 A / 261 B) sebanding dengan komposisi latih.
@@ -102,7 +102,7 @@ per lini (`runs/t1_tabel/f1_per_kelas_per_lini.csv`) menunjukkan penurunan terpu
 yang tipis**: gores 0,832 → 0,588, retak 0,750 → 0,492, noda 0,915 → 0,768, sedangkan kelas yang dikenali
 dari sensor stabil (las_dingin 0,939 → 0,928).
 
-**Mengapa.** Analisis Fourier 2.000 gambar `normal` data latih per lini (`kode/task1_tekstur.py`,
+**Mengapa.** Analisis Fourier 2.000 gambar `normal` data latih per lini (`kode/task1_klasifikasi/task1_tekstur.py`,
 `runs/t1_tekstur/metrics.json`, Gambar `laporan_figs/task1/domain_fourier.png`) menunjukkan gambar lini B
 punya energi tambahan pada cincin frekuensi 13–18 siklus/64 px (periode ±4 px): median porsi energi cincin
 9,8% vs 2,2% di lini A (energi absolut 27,1 vs 3,1). Di dalam satu gambar lini B, 65% energi cincin berada
