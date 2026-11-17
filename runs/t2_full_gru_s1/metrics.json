@@ -1,0 +1,8 @@
+{
+  "mode": "full",
+  "n_mesin_train": 900,
+  "n_spike_diganti": 5199,
+  "n_nan_diisi": 72200,
+  "pred_test_mean": 94.28565216064453,
+  "waktu_detik": 257.3
+}

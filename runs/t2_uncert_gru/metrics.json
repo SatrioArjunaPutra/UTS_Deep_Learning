@@ -1,0 +1,96 @@
+{
+  "n_titik_potong": 900,
+  "n_mesin": 180,
+  "rmse_seed0": 20.049048129211105,
+  "rmse_ensemble": 19.729291026765363,
+  "skor_seed0": 18929.641088812474,
+  "skor_ensemble": 18609.062884928597,
+  "cakupan_mentah_mc_dropout_seed0": 0.5722222222222222,
+  "lebar_mentah_mc_dropout_seed0": 24.342228053380854,
+  "cakupan_mentah_ensemble_saja": 0.16444444444444445,
+  "lebar_mentah_ensemble_saja": 8.337977918716865,
+  "cakupan_mentah_ensemble+mc": 0.6222222222222222,
+  "lebar_mentah_ensemble+mc": 27.262291280693926,
+  "cakupan_conformal_split": 0.9033333333333333,
+  "lebar_conformal_split": 56.102155294835,
+  "faktor_conformal_q": 3.9107482599277636,
+  "cakupan_per_rentang": {
+    "0-50": 0.914572864321608,
+    "50-100": 0.7232142857142857,
+    "100-150": 0.977319587628866
+  },
+  "korelasi_sd_vs_galat_abs": 0.022652547705564477,
+  "aturan_servis": [
+    {
+      "T": 10,
+      "aturan": "prediksi_titik",
+      "tertangkap_rusak<=10": 0.3333333333333333,
+      "alarm_palsu_rul>50": 0.0,
+      "frac_diservis": 0.02,
+      "rata2_sisa_umur_terbuang": 6.777777777777778
+    },
+    {
+      "T": 10,
+      "aturan": "batas_bawah_90",
+      "tertangkap_rusak<=10": 1.0,
+      "alarm_palsu_rul>50": 0.005706134094151213,
+      "frac_diservis": 0.15777777777777777,
+      "rata2_sisa_umur_terbuang": 19.443661971830984
+    },
+    {
+      "T": 20,
+      "aturan": "prediksi_titik",
+      "tertangkap_rusak<=10": 0.6923076923076923,
+      "alarm_palsu_rul>50": 0.0,
+      "frac_diservis": 0.06888888888888889,
+      "rata2_sisa_umur_terbuang": 13.048387096774194
+    },
+    {
+      "T": 20,
+      "aturan": "batas_bawah_90",
+      "tertangkap_rusak<=10": 1.0,
+      "alarm_palsu_rul>50": 0.012838801711840228,
+      "frac_diservis": 0.18,
+      "rata2_sisa_umur_terbuang": 22.14814814814815
+    },
+    {
+      "T": 30,
+      "aturan": "prediksi_titik",
+      "tertangkap_rusak<=10": 1.0,
+      "alarm_palsu_rul>50": 0.0028530670470756064,
+      "frac_diservis": 0.13333333333333333,
+      "rata2_sisa_umur_terbuang": 16.875
+    },
+    {
+      "T": 30,
+      "aturan": "batas_bawah_90",
+      "tertangkap_rusak<=10": 1.0,
+      "alarm_palsu_rul>50": 0.018544935805991442,
+      "frac_diservis": 0.21222222222222223,
+      "rata2_sisa_umur_terbuang": 24.63350785340314
+    },
+    {
+      "T": 40,
+      "aturan": "prediksi_titik",
+      "tertangkap_rusak<=10": 1.0,
+      "alarm_palsu_rul>50": 0.007132667617689016,
+      "frac_diservis": 0.17,
+      "rata2_sisa_umur_terbuang": 20.73856209150327
+    },
+    {
+      "T": 40,
+      "aturan": "batas_bawah_90",
+      "tertangkap_rusak<=10": 1.0,
+      "alarm_palsu_rul>50": 0.05135520684736091,
+      "frac_diservis": 0.24555555555555555,
+      "rata2_sisa_umur_terbuang": 29.97737556561086
+    }
+  ],
+  "geser_bias": {
+    "c_terbaik_skor": -15,
+    "skor_c0": 18609.062884928597,
+    "skor_terbaik": 7942.289908074972,
+    "rmse_c0": 19.729291026765363,
+    "rmse_di_c_terbaik": 22.572301775987977
+  }
+}

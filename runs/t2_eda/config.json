@@ -1,0 +1,19 @@
+{
+  "nama": "t2_eda",
+  "waktu": "2026-11-16 16:20:13",
+  "argumen": {
+    "data": "data_uts_dl"
+  },
+  "versi": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": null,
+    "torchvision": null,
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "umap": null,
+    "lightgbm": null
+  }
+}
