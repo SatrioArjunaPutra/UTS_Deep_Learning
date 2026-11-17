@@ -96,7 +96,10 @@ def _sama(a, b):
     try:
         return abs(float(a) - float(b)) < 1e-12
     except (TypeError, ValueError):
-        return str(a).replace("\\", "/") == str(b).replace("\\", "/")
+        def norm(s):  # path: bandingkan mulai dari "runs/..." agar absolut vs relatif dianggap sama
+            s = str(s).replace("\\", "/")
+            return s[s.find("runs/"):] if "runs/" in s else s
+        return norm(a) == norm(b)
 
 
 def config_beda(run_dir, argumen):

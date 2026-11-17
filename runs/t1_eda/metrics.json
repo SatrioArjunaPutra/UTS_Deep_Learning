@@ -1,0 +1,163 @@
+{
+  "n_train": 48000,
+  "n_test": 16000,
+  "distribusi_kelas": {
+    "normal": 23888,
+    "gores": 5623,
+    "noda": 4773,
+    "las_dingin": 4323,
+    "retak": 3606,
+    "gelembung": 3430,
+    "kontaminasi": 2357
+  },
+  "sensor_hilang_sebagian_dalam_kanal": 0.0,
+  "frac_kanal_hilang_train": {
+    "suhu (C)": 0.0595,
+    "getaran": 0.0593,
+    "arus (A)": 0.0596
+  },
+  "frac_semua_sensor_hilang_train": 0.049,
+  "frac_semua_sensor_hilang_test": 0.0508125,
+  "frac_min1_kanal_hilang_train": 0.08047916666666667,
+  "sensor_hilang_per_kelas": {
+    "gelembung": 0.051,
+    "gores": 0.0518,
+    "kontaminasi": 0.0416,
+    "las_dingin": 0.047,
+    "noda": 0.0517,
+    "normal": 0.0476,
+    "retak": 0.0555
+  },
+  "sensor_hilang_per_lini_train": {
+    "A": 0.0486,
+    "B": 0.0502
+  },
+  "sensor_hilang_per_lini_test": {
+    "A": 0.0529,
+    "B": 0.0494
+  },
+  "beda_sinyal_vs_normal_relatif_std": {
+    "normal": {
+      "suhu (C)": 0.0,
+      "getaran": 0.0,
+      "arus (A)": 0.0
+    },
+    "gores": {
+      "suhu (C)": 0.011,
+      "getaran": 0.014,
+      "arus (A)": 0.009
+    },
+    "noda": {
+      "suhu (C)": 0.011,
+      "getaran": 0.013,
+      "arus (A)": 0.027
+    },
+    "retak": {
+      "suhu (C)": 0.013,
+      "getaran": 0.012,
+      "arus (A)": 0.027
+    },
+    "gelembung": {
+      "suhu (C)": 0.249,
+      "getaran": 0.016,
+      "arus (A)": 0.012
+    },
+    "las_dingin": {
+      "suhu (C)": 0.011,
+      "getaran": 0.014,
+      "arus (A)": 2.843
+    },
+    "kontaminasi": {
+      "suhu (C)": 0.008,
+      "getaran": 0.019,
+      "arus (A)": 0.031
+    }
+  },
+  "std_getaran_per_kelas": {
+    "gelembung": 0.7860000133514404,
+    "gores": 0.7860999703407288,
+    "kontaminasi": 0.7853999733924866,
+    "las_dingin": 0.7856000065803528,
+    "noda": 0.7864000201225281,
+    "normal": 0.7854999899864197,
+    "retak": 0.8046000003814697
+  },
+  "proporsi_lini": {
+    "train": {
+      "A": 0.7492,
+      "B": 0.2507
+    },
+    "test": {
+      "B": 0.6004,
+      "A": 0.3996
+    }
+  },
+  "proporsi_mesin_test_vs_train": {
+    "M01": 0.52,
+    "M02": 0.55,
+    "M03": 0.54,
+    "M04": 0.5,
+    "M05": 0.54,
+    "M06": 0.56,
+    "M07": 2.36,
+    "M08": 2.35,
+    "M09": 2.39,
+    "M10": 2.42,
+    "M11": 2.49,
+    "M12": 2.35
+  },
+  "mesin_per_lini": {
+    "A": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06"
+    ],
+    "B": [
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12"
+    ]
+  },
+  "kecerahan_rata2": {
+    "train_A": 139.79,
+    "train_B": 111.73,
+    "test_A": 139.89,
+    "test_B": 111.65
+  },
+  "kontras_rata2": {
+    "train_A": 12.78,
+    "train_B": 17.14,
+    "test_A": 12.77,
+    "test_B": 17.13
+  },
+  "suhu_rata2_per_lini": {
+    "A": 181.12,
+    "B": 183.115
+  },
+  "kelas_per_lini": {
+    "A": {
+      "gelembung": 0.0717,
+      "gores": 0.1176,
+      "kontaminasi": 0.0494,
+      "las_dingin": 0.0904,
+      "noda": 0.0992,
+      "normal": 0.4967,
+      "retak": 0.075
+    },
+    "B": {
+      "gelembung": 0.0709,
+      "gores": 0.1157,
+      "kontaminasi": 0.0482,
+      "las_dingin": 0.0891,
+      "noda": 0.1001,
+      "normal": 0.5007,
+      "retak": 0.0754
+    }
+  }
+}
