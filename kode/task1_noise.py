@@ -41,6 +41,7 @@ def main():
     ap.add_argument("--ambang_label", type=float, default=0.05)
     ap.add_argument("--ambang_lain", type=float, default=0.80)
     ap.add_argument("--lewati_training", action="store_true", help="pakai run OOF yang sudah ada")
+    ap.add_argument("--seed", type=int, default=0, help="seed training tiap fold OOF (diteruskan ke task1_train.py)")
     a = ap.parse_args()
     run = buat_run("t1_noise", a)
 
@@ -50,7 +51,7 @@ def main():
             continue
         subprocess.run([sys.executable, os.path.join(HERE, "task1_train.py"), "--data", a.data, "--nama", nama,
                         "--modal", "fusion", "--fusion", a.fusion, "--kfold", str(a.k), "--fold", str(f),
-                        "--epochs", str(a.epochs), "--mod_drop", "0.1"], check=True)
+                        "--epochs", str(a.epochs), "--mod_drop", "0.1", "--seed", str(a.seed)], check=True)
 
     meta = pd.read_csv(os.path.join(a.data, "klasifikasi_train_meta.csv"))
     y = meta["kelas"].map({k: i for i, k in enumerate(KELAS)}).values

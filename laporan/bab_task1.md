@@ -159,8 +159,8 @@ di model final.
 ## 1g. Training dan model final
 
 - **Sanity check**: model fusi xattn yang sama dengan model final dilatih pada satu batch 64 sampel;
-  setelah 300 langkah loss turun dari 1,96 ke 5,6·10⁻⁵ dan akurasi 1,000 (`runs/t1_sanity_overfit`,
-  kurva `kurva_overfit.png`), menandakan pipeline data–model–loss benar dan model cukup kapasitasnya.
+  setelah 300 langkah loss turun dari 1,96 ke 5,6·10⁻⁵ dan akurasi 1,000 (`runs/t1_sanity_overfit/metrics.json`
+  dan `history.json`, kurva `runs/t1_sanity_overfit/kurva_overfit.png`), menandakan pipeline data–model–loss benar dan model cukup kapasitasnya.
 - Model yang dievaluasi selalu model **epoch terakhir** (jadwal OneCycle), bukan epoch terbaik di validasi,
   agar skor validasi tidak bias oleh pemilihan epoch.
 - **Konfigurasi final** (dipilih di validasi dengan aturan yang ditetapkan sebelum melihat hasil: macro-F1

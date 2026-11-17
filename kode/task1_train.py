@@ -12,7 +12,7 @@ Pilihan yang dipakai di semua run (dan alasannya):
   dan urutan batch.
 - Loss cross-entropy berbobot kelas (1/sqrt(frekuensi)), karena kelas normal ~50%.
 - Augmentasi geometris selalu aktif (flip, rotasi 90 derajat): cacat tidak punya orientasi tetap.
-- Model yang dievaluasi = model di epoch TERAKHIR (jadwal cosine), bukan epoch terbaik di
+- Model yang dievaluasi = model di epoch TERAKHIR (jadwal OneCycle, turun ala cosine), bukan epoch terbaik di
   validasi, agar angka validasi tidak bias oleh pemilihan epoch.
 
 Metrik yang disimpan (runs/<nama>/metrics.json):
