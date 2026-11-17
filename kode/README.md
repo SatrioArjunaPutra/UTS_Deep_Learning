@@ -7,9 +7,13 @@ Diuji dengan Python 3.12, Windows 11, GPU NVIDIA RTX 3050 Laptop (4 GB), CUDA 12
 ```bash
 python -m venv .venv
 .venv/Scripts/activate            # Linux/Mac: source .venv/bin/activate
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu126
 pip install -r kode/requirements.txt
 ```
+
+Versi library yang menghasilkan semua angka laporan: torch 2.14.1, torchvision 0.29.1, numpy 2.5.4,
+pandas 3.1.1, scikit-learn 1.9.1, scipy 1.18.1, matplotlib 3.11.2, umap-learn 0.6.0, lightgbm 4.7.0
+(juga tercatat otomatis di `runs/<nama>/config.json` tiap run).
 
 Di Google Colab: buka `kode/00_setup_colab.ipynb` (clone repo, unduh data, jalankan).
 
