@@ -22,7 +22,9 @@ python kode/reproduce.py --data data_uts_dl --task 3     # K-Means k=8: silhouet
 python kode/cek_submission.py --data data_uts_dl         # cek format & himpunan ID ketiga file prediksi
 ```
 Angka yang harus muncul sama dengan `runs/reproduce/hasil.json` dan tabel di laporan. Tanpa GPU, jalankan di
-Colab (`kode/00_setup_colab.ipynb`). Latih ulang dari nol: tambahkan `--retrain` (beberapa jam, jangan saat ujian).
+Colab (`kode/00_setup_colab.ipynb`). Task 2 juga bisa dijalankan di CPU (±40 detik). Angka CV-nya sama persis,
+tetapi rata-rata prediksi uji menjadi 94,12, bukan 94,08, karena MC dropout memakai generator acak yang berbeda
+di CPU dan CUDA. Kalau ditanya, jelaskan itu, dan jangan commit `prediksi_rul.csv` hasil CPU. Latih ulang dari nol: tambahkan `--retrain` (beberapa jam, jangan saat ujian).
 
 ## B. Task 1 — Klasifikasi multimodal
 
