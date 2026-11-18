@@ -2,7 +2,7 @@
 
 Setiap run menulis ke runs/<nama>/:
 - config.json  : argumen + versi library + seed (syarat reproduksibilitas di soal)
-- metrics.json : angka yang boleh dikutip di laporan (lihat CLAUDE.md aturan 4)
+- metrics.json : angka yang boleh dikutip di laporan (aturan: setiap angka laporan harus berasal dari file ini)
 """
 import json
 import os
