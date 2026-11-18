@@ -17,7 +17,7 @@ membukanya sebagai PR #6.
 **Alat:** Claude Code (Anthropic), dijalankan di VS Code oleh kedua anggota.
 
 **Bagian yang dibantu:**
-- Menyusun kerangka repositori, aturan proyek (`CLAUDE.md`), dan urutan kerja.
+- Menyusun kerangka repositori, aturan proyek (dulu di `CLAUDE.md`, file itu sudah dihapus dari repo pada 17 Nov 2026), dan urutan kerja.
 - Menulis draf kode untuk ketiga task (EDA, preprocessing, model, skrip eksperimen, `reproduce.py`,
   `cek_submission.py`, `tabel_laporan.py`, `laporan/buat_pdf.py`) dan menjalankannya di laptop kelompok.
 - Menyusun draf bab laporan (Task 1–3, pendahuluan, kesimpulan) dari angka di `runs/*/metrics.json`, serta
